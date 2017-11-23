@@ -15,7 +15,7 @@ if __name__ == '__main__':
     # instance = 192.168.12.16:9100
     # label >> cpu = ? , mode = ?
 
-    push_url = 'http://172.16.4.31:9091/metrics/job/push_job/instance/192.168.12.16:9100'
+    push_url = 'http://192.168.36.60:9091/metrics/job/push_job/instance/172.16.4.31:9100'
     headers = {
         'Content-Type': 'multipart/form-data'
     }
