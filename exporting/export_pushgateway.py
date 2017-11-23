@@ -17,9 +17,6 @@ from prometheus_client import (
     push_to_gateway)
 
 
-# from prometheus_client.exposition import instance_ip_grouping_key
-
-
 def push_default_data():
     """
     推送一个默认没有labels的数据,接口会返回以下增加的信息

@@ -7,9 +7,15 @@
 # @Docs           : 
 # @Source         : 
 
+from flask import Flask
 
-from prometheus_client import Counter
+app = Flask(__name__)
 
-c = Counter('my_requests_total', 'HTTP Failures', ['method', 'endpoint'])
-c.labels('get', '/').inc()
-c.labels('post', '/submit').inc()
+
+@app.route('/', methods=['GET', 'POST'])
+def hello_world():
+    return 'Hello World!flask'
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
