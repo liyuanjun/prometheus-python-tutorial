@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # @Time           : 17-11-22 下午4:39
 # @Author         : Tom.Lee
-# @CopyRight      : 2016-2017 OpenBridge by yihecloud
 # @File           : export_wsgi.py
 # @Product        : PyCharm
 # @Docs           : 

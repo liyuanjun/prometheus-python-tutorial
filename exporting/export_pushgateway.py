@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # @Time           : 17-11-22 下午4:44
 # @Author         : Tom.Lee
-# @CopyRight      : 2016-2017 OpenBridge by yihecloud
 # @File           : export_pushgateway.py
 # @Product        : PyCharm
 # @Docs           : push_to_gateway 把批量任务的指标接口暴露给prometheus抓取
