@@ -4,7 +4,7 @@
 # @Author         : Tom.Lee
 # @File           : push_metrics.py
 # @Product        : PyCharm
-# @Docs           : 推送数据到pushgatway
+# @Docs           : 推送数据到 pushgateway
 # @Source         : 
 
 
