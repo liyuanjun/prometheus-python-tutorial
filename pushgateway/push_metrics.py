@@ -4,7 +4,7 @@
 # @Author         : Tom.Lee
 # @File           : push_metrics.py
 # @Product        : PyCharm
-# @Docs           : 推送数据到pushgatway
+# @Docs           : 推送数据到 pushgateway
 # @Source         : 
 
 
@@ -12,10 +12,10 @@ import requests
 
 if __name__ == '__main__':
     # job = push_job
-    # instance = 192.168.12.16:9100
+    # instance = 172.16.4.31:9100
     # label >> cpu = ? , mode = ?
 
-    push_url = 'http://172.16.4.31:9091/metrics/job/push_job/instance/192.168.12.16:9100'
+    push_url = 'http://192.168.36.60:9091/metrics/job/push_job/instance/172.16.4.31:9100'
     headers = {
         'Content-Type': 'multipart/form-data'
     }
