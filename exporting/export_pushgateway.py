@@ -77,22 +77,32 @@ def push_labels_data():
     ...
     # HELP tom_custom_label_metric test push label metric
     # TYPE tom_custom_label_metric gauge
-    tom_custom_label_metric{endpoint="/",instance="172.16.4.31:9100",job="label_job"} 8
+    tom_custom_label_metric{endpoint="/",instance="172.16.4.31:9100",job="label_job"} 1
+    tom_custom_label_metric{endpoint="/hello",instance="172.16.4.31:9100",job="label_job"} 49
     :return:
     """
     c = Gauge(
         'tom_custom_label_metric',
         'test push label metric',
-        ['instance', 'endpoint']
+        ['instance', 'endpoint']  # 对应'172.16.4.31:9100', '/'
     )
     registry = CollectorRegistry()
     registry.register(c)
 
     while True:
         time.sleep(2)
+        # ########第一组
+        # 设置时间戳
         c.labels('172.16.4.31:9100', '/').set_to_current_time()
+        # 设置value值
         c.labels('172.16.4.31:9100', '/').set(random.randint(1, 99))
-        push_to_gateway(gateway='http://172.16.4.31:9091',
+
+        # ########第二组
+        c.labels('172.16.4.31:9100', '/hello').set_to_current_time()
+        # 设置value值
+        c.labels('172.16.4.31:9100', '/hello').set(random.randint(1, 99))
+
+        push_to_gateway(gateway='http://192.168.71.28:9091',
                         job='label_job',
                         registry=registry)
 
@@ -100,5 +110,5 @@ def push_labels_data():
 if __name__ == '__main__':
     """TEST"""
 
-    # push_labels_data()
+    push_labels_data()
     # push_default_data()
